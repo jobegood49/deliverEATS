@@ -1,10 +1,13 @@
 import React from 'react';
 import './Menus.css';
 
-const Menus = () => {
+const Menus = ({ restaurant, menus }) => {
+  console.log(menus);
+  console.log(menus.Brunchs[0].title);
   return (
     <div className="text">
-      <p> HELLOO</p>
+      <p>{restaurant.name}</p>
+      <p>{menus.Brunchs[1].title}</p>
     </div>
   );
 };

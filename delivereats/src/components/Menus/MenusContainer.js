@@ -3,8 +3,34 @@ import axios from 'axios';
 import Menus from './Menus';
 
 class MenusContainer extends Component {
+  state = {
+    restaurant: {},
+    menus: {},
+    isLoading: true,
+  };
+
+  componentDidMount() {
+    axios
+      .get(
+        'https://s3-eu-west-1.amazonaws.com/lereacteurapp/react/deliveroo/deliveroo-cart.json',
+      )
+      .then(response =>
+        this.setState({
+          restaurant: response.data.restaurant,
+          menus: response.data.menu,
+          isLoading: false,
+        }),
+      );
+  }
+
   render() {
-    return <Menus />;
+    if (!this.state.isLoading) {
+      return (
+        <Menus restaurant={this.state.restaurant} menus={this.state.menus} />
+      );
+    } else {
+      return <p>page is loading</p>;
+    }
   }
 }
 
