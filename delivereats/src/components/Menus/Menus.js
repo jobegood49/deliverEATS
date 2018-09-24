@@ -7,7 +7,7 @@ const Menus = ({ restaurant, menus }) => {
   return (
     <div className="text">
       <p>{restaurant.name}</p>
-      <p>{menus.Brunchs[1].title}</p>
+      <p>{menus.Brunchs[0].title}</p>
     </div>
   );
 };

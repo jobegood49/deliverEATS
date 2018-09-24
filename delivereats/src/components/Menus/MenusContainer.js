@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Menus from './Menus';
+import { Spinner } from 'react-activity';
 
 class MenusContainer extends Component {
   state = {
@@ -29,7 +30,11 @@ class MenusContainer extends Component {
         <Menus restaurant={this.state.restaurant} menus={this.state.menus} />
       );
     } else {
-      return <p>page is loading</p>;
+      return (
+        <div className="loadingIndicator">
+          <Spinner color={'blue'} />
+        </div>
+      );
     }
   }
 }
