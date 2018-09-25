@@ -1,12 +1,18 @@
 import React from 'react';
-import './Header.css'
+import './Header.css';
 
 const Header = () => {
-    return (
-        <div className='headerContainer'>
-            <p>deliver eats</p>
-        </div>
-    );
+  return (
+    <header>
+      <div className="headerContainer">
+        <img
+          src="https://cwa.roocdn.com/_next/static/logo-teal.64a39561.svg"
+          className="logo"
+          alt="Logo Deliveroo"
+        />
+      </div>
+    </header>
+  );
 };
 
 export default Header;

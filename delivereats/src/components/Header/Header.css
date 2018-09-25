@@ -1,4 +1,15 @@
 .headerContainer {
-    display: flex;
-    color: green
+  display: flex;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  border-bottom: solid 1px lightblue;
+}
+
+.logo {
+  height: 40px;
 }
