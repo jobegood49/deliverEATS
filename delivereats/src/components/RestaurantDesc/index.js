@@ -1,2 +1,3 @@
-import RestaurantDescContainer from './RestaurantDescContainer'
-export default RestaurantDescContainer
+import RestaurantDesc from './RestaurantDesc'
+export default RestaurantDesc
+
