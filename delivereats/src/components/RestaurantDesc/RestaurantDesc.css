@@ -1,0 +1,22 @@
+.restaurantDescContainer {
+  display: flex;
+  padding: 20px 0;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.restaurantInfo {
+  flex: 0.66;
+  padding-right: 30px;
+}
+.restaurantImage {
+    flex:0.33;
+  }
+
+.restaurantImage > img {
+  height: 160px;
+  width:370px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3px
+}
