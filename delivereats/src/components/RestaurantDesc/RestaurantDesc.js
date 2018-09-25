@@ -1,12 +1,12 @@
 import React from 'react';
-import './RestaurantDesc.css'
+import './RestaurantDesc.css';
 
 const RestaurantDesc = ({ restaurant }) => {
   return (
     <div className="restaurantDescContainer">
       <div className="restaurantInfo">
-        <p>{restaurant.name}</p>
-        <p>{restaurant.description}</p>
+        <p className="name">{restaurant.name}</p>
+        <p className="desc">{restaurant.description}</p>
       </div>
       <div className="restaurantImage">
         <img src={restaurant.picture} />

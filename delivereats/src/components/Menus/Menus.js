@@ -8,9 +8,11 @@ const Menus = ({ restaurant, menus }) => {
   console.log(restaurant);
 
   return (
-    <div className="text">
-      <RestaurantDesc restaurant={restaurant} />
-      <p>{menus.Brunchs[0].title}</p>
+    <div className="container">
+      <div className="restDesc">
+        <RestaurantDesc restaurant={restaurant} />
+      </div>
+      {/* <p>{menus.Brunchs[0].title}</p> */}
     </div>
   );
 };

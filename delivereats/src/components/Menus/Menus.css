@@ -1,8 +1,14 @@
-.text {
-  font-size: 2em;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .loadingIndicator {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.restDesc {
+  width: 80%;
+  padding: 20px 0;
 }
