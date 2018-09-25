@@ -1,5 +1,6 @@
 import React from 'react';
 import './Menus.css';
+import RestaurantDesc from './../RestaurantDesc/';
 
 const Menus = ({ restaurant, menus }) => {
   console.log(menus);
@@ -7,6 +8,7 @@ const Menus = ({ restaurant, menus }) => {
   return (
     <div className="text">
       <p>{restaurant.name}</p>
+      <RestaurantDesc />
       <p>{menus.Brunchs[0].title}</p>
     </div>
   );
