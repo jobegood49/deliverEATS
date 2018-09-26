@@ -4,6 +4,8 @@ import MenuItems from '../MenuItems';
 import RestaurantDesc from './../RestaurantDesc/';
 
 const Menus = ({ restaurant, menus }) => {
+  const categories = Object.keys(menus);
+
   // console.log(menus);
   // console.log(menus.Brunchs[0].title);
   console.log(restaurant);
@@ -16,7 +18,11 @@ const Menus = ({ restaurant, menus }) => {
         </div>
       </div>
       <div className="menuItemsContainer">
-        <MenuItems menus={menus} />
+        {categories.map(category => {
+          if (menus[category].length > 0) {
+            return <MenuItems category={category} items={menus[category]} />;
+          }
+        })}
       </div>
     </div>
   );
