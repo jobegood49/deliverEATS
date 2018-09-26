@@ -1,5 +1,6 @@
 import React from 'react';
 import './Menus.css';
+import MenuItems from '../MenuItems';
 import RestaurantDesc from './../RestaurantDesc/';
 
 const Menus = ({ restaurant, menus }) => {
@@ -9,10 +10,14 @@ const Menus = ({ restaurant, menus }) => {
 
   return (
     <div className="container">
-      <div className="restDesc">
-        <RestaurantDesc restaurant={restaurant} />
+      <div className="restContainer">
+        <div className="restDesc">
+          <RestaurantDesc restaurant={restaurant} />
+        </div>
       </div>
-      {/* <p>{menus.Brunchs[0].title}</p> */}
+      <div className="menuItemsContainer">
+        <MenuItems menus={menus} />
+      </div>
     </div>
   );
 };

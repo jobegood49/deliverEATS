@@ -1,4 +1,4 @@
-.container {
+.restContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,4 +11,8 @@
 .restDesc {
   width: 80%;
   padding: 20px 0;
+}
+.menuItemsContainer {
+  background-color: lightgrey;
+  height: 100vw;
 }
