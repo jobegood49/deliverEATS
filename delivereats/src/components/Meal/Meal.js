@@ -5,13 +5,22 @@ import LinesEllipsis from 'react-lines-ellipsis';
 const Meal = ({ item }) => {
   return (
     <div className="cardContainer">
-      <div className="itemDesc">
-        <p>{item.title}</p>
-        <p>{item.description}</p>
-        <p>{item.price}</p>
+      <div >
+        <h5>{item.title}</h5>
+        <LinesEllipsis
+          text={item.description}
+          maxLine="2"
+          ellipsis="..."
+          trimRight
+          basedOn="letters"
+          className="itemDesc foodDescription"
+        />
+        <div className="foodPrice">
+          <p>{item.price}</p>
+        </div>
       </div>
-      <div className="itemPic">
-        <img style={{ height: 50 }} src={item.picture} />
+      <div>
+        <img style={{ height: 70 }} src={item.picture} />
       </div>
     </div>
   );
