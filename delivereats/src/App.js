@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Menus from './components/Menus';
 import Header from './components/Header';
@@ -9,10 +8,10 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <Fragment>
           <Header />
           <Route path="/menus" component={Menus} />
-        </div>
+        </Fragment>
       </Router>
     );
   }

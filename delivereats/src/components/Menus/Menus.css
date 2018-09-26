@@ -1,18 +1,24 @@
-.restContainer {
+.RestaurantComponentContainer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.MenuItemsComponentContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgray;
 }
 .loadingIndicator {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.restDesc {
+.RestaurantComponent {
   width: 80%;
   padding: 20px 0;
 }
-.menuItemsContainer {
-  background-color: lightgrey;
-  height: 100%;
+.MenuItemsComponent {
+  width: 80%;
+  padding: 20px 0;
 }
