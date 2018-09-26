@@ -11,7 +11,7 @@ const Meal = ({ item }) => {
         <p>{item.price}</p>
       </div>
       <div className="itemPic">
-        <img src={item.picture} />
+        <img style={{ height: 50 }} src={item.picture} />
       </div>
     </div>
   );
