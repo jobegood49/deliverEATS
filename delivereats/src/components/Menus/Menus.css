@@ -1,13 +1,13 @@
 .RestaurantComponentContainer {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 20px 0;
+  width: 60%;
+  margin: 0 auto;
 }
 .MenuItemsComponentContainer {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: lightgray;
+  background-color: #f3f5f5;
+  padding-top: 40px;
 }
 .loadingIndicator {
   display: flex;
@@ -15,10 +15,16 @@
   align-items: center;
 }
 .RestaurantComponent {
-  width: 80%;
   padding: 20px 0;
 }
 .MenuItemsComponent {
-  width: 70%;
-  padding: 20px 0;
+  flex: 1;
+}
+.CartComponent {
+  width: 370px;
+}
+.MenuItemsContainer {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
 }
