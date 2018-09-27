@@ -1,9 +1,29 @@
-.cardContainer {
-  display: flex;
+.cartContainer {
+  width: 370px;
+}
+
+.cartComponent {
+  padding: 10px;
   background-color: white;
-  width: 300px;
-  margin-right: 30px;
-  margin-bottom: 30px;
+  box-sizing: border-box;
+  box-shadow: 0 0 30px rgba(57, 57, 57, 0.1);
+}
+.button {
+  color: #8c9b9b;
+  background-color: #bac3c3;
+  font-size: 16px;
+  line-height: 50px;
+  font-family: 'Stratos Deliveroo Web';
+  font-weight: 600;
+  font-style: normal;
+  border-radius: 3px;
+  text-align: center;
+}
+.list {
+  display: flex;
   align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  min-height: 120px;
   box-sizing: border-box;
 }
