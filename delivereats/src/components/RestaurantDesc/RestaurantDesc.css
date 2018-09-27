@@ -4,18 +4,35 @@
 }
 
 .restaurantInfo {
-  flex: 2;
+  flex: 1;
   padding-right: 30px;
 }
 .restaurantImage {
-  flex: 1;
+  width: 370px;
+  height: 160px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3px;
 }
 .name {
-  font-weight: bold;
-  font-size: 2em;
+  font-size: 28px;
+  line-height: 28px;
+  font-family: 'Stratos Deliveroo Web';
+  font-weight: 600;
+  font-style: normal;
+  color: #2e3333;
 }
 .desc {
-  font-size: 1em;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-family: 'Adelle Sans';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px;
+  color: #818184;
 }
 
 .restaurantImage > img {

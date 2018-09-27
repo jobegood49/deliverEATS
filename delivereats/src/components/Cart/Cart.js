@@ -7,7 +7,7 @@ export default class Cart extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="cartContainer">
         <p>THIS IS THE CART</p>
       </div>
     );

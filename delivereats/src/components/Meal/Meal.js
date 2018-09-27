@@ -5,8 +5,8 @@ import LinesEllipsis from 'react-lines-ellipsis';
 const Meal = ({ item }) => {
   return (
     <div className="cardContainer">
-      <div >
-        <h5>{item.title}</h5>
+      <div>
+        <h5 className="title">{item.title}</h5>
         <LinesEllipsis
           text={item.description}
           maxLine="2"
@@ -20,7 +20,12 @@ const Meal = ({ item }) => {
         </div>
       </div>
       <div>
-        <img style={{ height: 70 }} src={item.picture} />
+        {item.picture && (
+          <img
+            style={{ height: 100, width: 100, objectFit: 'cover' }}
+            src={item.picture}
+          />
+        )}
       </div>
     </div>
   );
