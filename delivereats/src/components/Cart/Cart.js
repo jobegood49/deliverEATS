@@ -15,6 +15,7 @@ export default class Cart extends Component {
           </div>
           <div className="list">no items in cart</div>
         </div>
+
       </div>
     );
   }

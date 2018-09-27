@@ -1,3 +1,4 @@
+
 .cartContainer {
   width: 370px;
 }
@@ -25,5 +26,13 @@
   justify-content: center;
   padding-top: 10px;
   min-height: 120px;
+  
+.cardContainer {
+  display: flex;
+  background-color: white;
+  width: 300px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  align-items: center;
   box-sizing: border-box;
 }
