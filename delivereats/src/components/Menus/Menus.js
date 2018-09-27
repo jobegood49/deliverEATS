@@ -12,7 +12,6 @@ const Menus = ({ restaurant, menus }) => {
       <div className="RestaurantComponentContainer">
         <RestaurantDesc restaurant={restaurant} />
       </div>
-
       <div className="MenuItemsComponentContainer">
         <div className="MenuItemsContainer">
           <div className="MenuItemsComponent">
@@ -24,9 +23,7 @@ const Menus = ({ restaurant, menus }) => {
               }
             })}
           </div>
-          <div className="CartComponent">
-            <Cart />
-          </div>
+          <Cart />
         </div>
       </div>
     </div>
