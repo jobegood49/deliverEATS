@@ -9,13 +9,13 @@ const Menus = ({ restaurant, menus }) => {
 
   return (
     <div className="containerMain">
-      <div className="RestaurantComponentContainer">
+      <div className="restaurantComponentContainer">
         <RestaurantDesc restaurant={restaurant} />
       </div>
-      <main>
-        <div className="MenuContainer">
-          <div className="MenuItemsContainer">
-            <div className="MenuItemsComponent">
+      <div className="menus">
+        <div className="menuContainer">
+          <div className="menuItemsContainer">
+            <div className="menuItemsComponent">
               {categories.map(category => {
                 if (menus[category].length > 0) {
                   return (
@@ -27,7 +27,7 @@ const Menus = ({ restaurant, menus }) => {
             <Cart />
           </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 };

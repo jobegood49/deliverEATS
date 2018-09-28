@@ -1,4 +1,4 @@
-.RestaurantComponentContainer {
+.restaurantComponentContainer {
   display: flex;
   padding: 20px 0;
   width: 1124px;
@@ -10,43 +10,32 @@
   width: 1124px;
   margin: 0 auto;
 }
-.MenuContainer {
+.menuContainer {
   display: flex;
   width: 1124px;
   margin: 0 auto;
   background-color: #f3f5f5;
-}
-MenuItemsComponentContainer {
-  width: 1124px;
-  margin: 0 auto;
-  display: flex;
 }
 .loadingIndicator {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.RestaurantComponent {
+.restaurantComponent {
   padding: 20px 0;
 }
-.MenuItemsComponent {
+.menuItemsComponent {
   flex: 1;
 }
-.CartComponent {
+.cartComponent {
   width: 370px;
 }
-.MenuItemsContainer {
+.menuItemsContainer {
   display: flex;
 }
-main {
+.menus {
   display: flex;
   background-color: #f3f5f5;
   padding-top: 40px;
   margin: 0 auto;
-}
-
-main {
-  display: flex;
-  background-color: #f3f5f5;
-  padding-top: 40px;
 }
