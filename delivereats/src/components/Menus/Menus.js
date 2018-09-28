@@ -5,8 +5,6 @@ import RestaurantDesc from './../RestaurantDesc/';
 import Cart from '../Cart';
 const Menus = ({ restaurant, menus }) => {
   const categories = Object.keys(menus);
-  console.log(restaurant);
-
   return (
     <div className="containerMain">
       <div className="restaurantComponentContainer">
