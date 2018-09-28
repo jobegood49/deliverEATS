@@ -2,9 +2,9 @@ import React from 'react';
 import './Meal.css';
 import LinesEllipsis from 'react-lines-ellipsis';
 
-const Meal = ({ item }) => {
+const Meal = ({ item, addMeal }) => {
   return (
-    <div className="cardContainer">
+    <div className="cardContainer" onClick={() => addMeal(item)}>
       <div>
         <h5 className="title">{item.title}</h5>
         <LinesEllipsis

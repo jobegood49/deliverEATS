@@ -2,13 +2,13 @@ import React from 'react';
 import Meal from '../Meal';
 import './MenuItems.css';
 
-const MenuItems = ({ category, items }) => {
+const MenuItems = ({ category, items, addMeal }) => {
   return (
     <div>
       <h2>{category}</h2>
       <div className="menuItemsMeal">
         {items.map(item => (
-          <Meal item={item} />
+          <Meal item={item} addMeal={addMeal} />
         ))}
       </div>
     </div>
