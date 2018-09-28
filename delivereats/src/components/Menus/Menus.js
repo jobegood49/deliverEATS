@@ -8,24 +8,26 @@ const Menus = ({ restaurant, menus }) => {
   console.log(restaurant);
 
   return (
-    <div>
+    <div className="containerMain">
       <div className="RestaurantComponentContainer">
         <RestaurantDesc restaurant={restaurant} />
       </div>
-      <div className="MenuItemsComponentContainer">
-        <div className="MenuItemsContainer">
-          <div className="MenuItemsComponent">
-            {categories.map(category => {
-              if (menus[category].length > 0) {
-                return (
-                  <MenuItems category={category} items={menus[category]} />
-                );
-              }
-            })}
+      <main>
+        <div className="MenuContainer">
+          <div className="MenuItemsContainer">
+            <div className="MenuItemsComponent">
+              {categories.map(category => {
+                if (menus[category].length > 0) {
+                  return (
+                    <MenuItems category={category} items={menus[category]} />
+                  );
+                }
+              })}
+            </div>
+            <Cart />
           </div>
-          <Cart />
         </div>
-      </div>
+      </main>
     </div>
   );
 };

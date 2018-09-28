@@ -1,13 +1,25 @@
 .RestaurantComponentContainer {
   display: flex;
   padding: 20px 0;
-  width: 60%;
+  width: 1124px;
   margin: 0 auto;
 }
-.MenuItemsComponentContainer {
+.bannerContainer {
   display: flex;
+  padding: 20px 0;
+  width: 1124px;
+  margin: 0 auto;
+}
+.MenuContainer {
+  display: flex;
+  width: 1124px;
+  margin: 0 auto;
   background-color: #f3f5f5;
-  padding-top: 40px;
+}
+MenuItemsComponentContainer {
+  width: 1124px;
+  margin: 0 auto;
+  display: flex;
 }
 .loadingIndicator {
   display: flex;
@@ -24,8 +36,17 @@
   width: 370px;
 }
 .MenuItemsContainer {
-  width: 60%;
-  margin: 0 auto;
   display: flex;
+}
+main {
+  display: flex;
+  background-color: #f3f5f5;
+  padding-top: 40px;
+  margin: 0 auto;
+}
 
+main {
+  display: flex;
+  background-color: #f3f5f5;
+  padding-top: 40px;
 }

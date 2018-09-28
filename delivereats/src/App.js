@@ -11,6 +11,7 @@ class App extends Component {
         <Fragment>
           <Header />
           <Route path="/menus" component={Menus} />
+          <Route path="" component={Menus} />
         </Fragment>
       </Router>
     );
