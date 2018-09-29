@@ -2,9 +2,13 @@ import React from 'react';
 import './Meal.css';
 import LinesEllipsis from 'react-lines-ellipsis';
 
-const Meal = ({ item, addMeal }) => {
+const Meal = ({ item, addMeal, cart }) => {
+  let active = '';
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].id === item.id) active = 'active';
+  }
   return (
-    <div className="cardContainer" onClick={() => addMeal(item)}>
+    <div className={`cardContainer ${active}`} onClick={() => addMeal(item)}>
       <div>
         <h5 className="title">{item.title}</h5>
         <LinesEllipsis

@@ -19,6 +19,7 @@ const Menus = ({ restaurant, menus, addMeal, decrement, increment, cart }) => {
                   return (
                     <MenuItems
                       key={i}
+                      cart={cart}
                       addMeal={addMeal}
                       category={category}
                       items={menus[category]}
