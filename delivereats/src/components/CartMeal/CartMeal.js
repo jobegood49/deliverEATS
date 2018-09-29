@@ -1,5 +1,6 @@
 import React from 'react';
 import './CartMeal.css';
+import Price from 'format-price';
 
 const CartMeal = ({ cartMeal, increment, decrement }) => {
   return (
@@ -14,7 +15,7 @@ const CartMeal = ({ cartMeal, increment, decrement }) => {
         </button>
         {cartMeal.title}
       </div>
-      <p>{(cartMeal.price * cartMeal.quantity).toFixed(2)}</p>
+      <p>{Price.format('fr-FR', 'EUR', cartMeal.price * cartMeal.quantity)}</p>
     </div>
   );
 };
