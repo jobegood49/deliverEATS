@@ -10,7 +10,7 @@ export default class Cart extends Component {
           <div className="button">
             <p>Valider mon panier</p>
           </div>
-          {this.props.cart &&
+          {this.props.cart.length > 0 ? (
             this.props.cart.map((cartMeal, i) => (
               <CartMeal
                 key={i}
@@ -18,8 +18,12 @@ export default class Cart extends Component {
                 increment={this.props.increment}
                 decrement={this.props.decrement}
               />
-            ))}
-          <div className="list">no items in cart</div>
+            ))
+          ) : (
+            <div className="list">
+              <p> no items in cart</p>
+            </div>
+          )}
         </div>
       </div>
     );
