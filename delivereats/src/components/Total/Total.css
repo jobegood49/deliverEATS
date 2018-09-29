@@ -1,0 +1,9 @@
+.totalContainer{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid gray;
+    padding-top: 5px
+}
+.totalText{
+    font-weight: bold
+}
