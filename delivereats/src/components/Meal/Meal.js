@@ -3,7 +3,7 @@ import './Meal.css';
 import LinesEllipsis from 'react-lines-ellipsis';
 
 const Meal = ({ item, addMeal, cart }) => {
-  let active = '';
+  let active = 'notActive';
   for (let i = 0; i < cart.length; i++) {
     if (cart[i].id === item.id) active = 'active';
   }

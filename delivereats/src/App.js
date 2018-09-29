@@ -1,5 +1,10 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
 import Menus from './components/Menus';
 import Header from './components/Header';
 import './App.css';
@@ -10,8 +15,10 @@ class App extends Component {
       <Router>
         <Fragment>
           <Header />
-          <Route path="/menus" component={Menus} />
-          {/* <Route path="" component={Menus} /> */}
+          <Switch>
+            <Route path="/menus" component={Menus} />
+            <Redirect from="*" to="/menus" />
+          </Switch>
         </Fragment>
       </Router>
     );
