@@ -10,7 +10,7 @@ const CartMeal = ({ cartMeal, increment, decrement }) => {
         <button onClick={() => increment(cartMeal.id)}>+</button>
         {cartMeal.title}
       </div>
-      <p>{cartMeal.price * cartMeal.quantity}</p>
+      <p>{(cartMeal.price * cartMeal.quantity).toFixed(2)}</p>
     </div>
   );
 };
