@@ -2,15 +2,20 @@ import React, { Component } from 'react';
 import './Cart.css';
 import CartMeal from '../CartMeal';
 import Total from '../Total';
+import { Link } from 'react-router-dom';
 
 export default class Cart extends Component {
   render() {
     return (
       <div className="cartContainer">
         <div className="cartComponent">
-          <div className="button">
-            <p>Valider mon panier</p>
-          </div>
+          <Link
+            to={{ pathname: '/checkout', params: { cart: this.props.cart } }}
+          >
+            <div className="button">
+              <p>Valider mon panier</p>
+            </div>
+          </Link>
           {this.props.cart.length > 0 ? (
             <div>
               {this.props.cart.map((cartMeal, i) => (

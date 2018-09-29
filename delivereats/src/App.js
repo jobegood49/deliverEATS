@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import Menus from './components/Menus';
 import Header from './components/Header';
+import Checkout from './components/Checkout';
 import './App.css';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
           <Header />
           <Switch>
             <Route path="/menus" component={Menus} />
+            <Route path="/checkout" component={Checkout} />
             <Redirect from="*" to="/menus" />
           </Switch>
         </Fragment>
