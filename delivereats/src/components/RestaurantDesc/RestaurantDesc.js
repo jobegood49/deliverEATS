@@ -9,7 +9,7 @@ const RestaurantDesc = ({ restaurant }) => {
         <p className="desc">{restaurant.description}</p>
       </div>
       <div className="restaurantImage">
-        <img src={restaurant.picture} />
+        <img src={restaurant.picture} alt={restaurant.name} />
       </div>
     </div>
   );

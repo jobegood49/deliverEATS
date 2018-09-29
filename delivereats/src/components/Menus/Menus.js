@@ -14,10 +14,11 @@ const Menus = ({ restaurant, menus, addMeal, decrement, increment, cart }) => {
         <div className="menuContainer">
           <div className="menuItemsContainer">
             <div className="menuItemsComponent">
-              {categories.map(category => {
+              {categories.map((category, i) => {
                 if (menus[category].length > 0) {
                   return (
                     <MenuItems
+                      key={i}
                       addMeal={addMeal}
                       category={category}
                       items={menus[category]}

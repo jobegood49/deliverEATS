@@ -7,8 +7,8 @@ const MenuItems = ({ category, items, addMeal }) => {
     <div>
       <h2>{category}</h2>
       <div className="menuItemsMeal">
-        {items.map(item => (
-          <Meal item={item} addMeal={addMeal} />
+        {items.map((item, i) => (
+          <Meal key={i} item={item} addMeal={addMeal} />
         ))}
       </div>
     </div>

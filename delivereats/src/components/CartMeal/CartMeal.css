@@ -1,0 +1,9 @@
+.cartMealContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quantityContainer {
+  display: flex;
+  align-items: center;
+}

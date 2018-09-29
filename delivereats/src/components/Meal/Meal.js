@@ -24,6 +24,7 @@ const Meal = ({ item, addMeal }) => {
           <img
             style={{ height: 100, width: 100, objectFit: 'cover' }}
             src={item.picture}
+            alt={item.title}
           />
         )}
       </div>

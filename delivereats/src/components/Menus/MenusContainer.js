@@ -13,26 +13,37 @@ class MenusContainer extends Component {
 
   addMeal = meal => {
     let newCart = [...this.state.cart];
-    meal = {
-      id: meal.id,
-      title: meal.title,
-      price: meal.price,
-      quantity: 1,
-    };
-    newCart.push(meal);
+    let isInCart = false;
+    for (let i = 0; i < newCart.length; i++) {
+      if (newCart[i].id === meal.id) {
+        isInCart = true;
+        newCart[i].quantity++;
+        break;
+      }
+    }
+    if (!isInCart) {
+      meal = {
+        id: meal.id,
+        title: meal.title,
+        price: meal.price,
+        quantity: 1,
+      };
+      newCart.push(meal);
+    }
     this.setState({ cart: newCart });
   };
 
-  increment(id) {
+  increment = id => {
     let newCart = [...this.state.cart];
     for (let i = 0; i < newCart.length; i++) {
       if (newCart[i].id === id) {
         newCart[i].quantity += 1;
       }
     }
-  }
+    this.setState({ cart: newCart });
+  };
 
-  decrement(id) {
+  decrement = id => {
     let newCart = [...this.state.cart];
     for (let i = 0; i < newCart.length; i++) {
       if (newCart[i].id === id) {
@@ -40,7 +51,8 @@ class MenusContainer extends Component {
         if (newCart[i].quantity === 0) newCart.splice(i, 1);
       }
     }
-  }
+    this.setState({ cart: newCart });
+  };
 
   componentDidMount() {
     axios
