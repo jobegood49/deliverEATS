@@ -10,7 +10,14 @@ export default class Cart extends Component {
       <div className="cartContainer">
         <div className="cartComponent">
           <Link
-            to={{ pathname: '/checkout', params: { cart: this.props.cart } }}
+            to={{
+              pathname: '/checkout',
+              params: {
+                cart: this.props.cart,
+                increment: this.props.increment,
+                decrement: this.props.decrement,
+              },
+            }}
           >
             <div className="button">
               <p>Valider mon panier</p>
