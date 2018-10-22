@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Menus from './Menus';
 import { Spinner } from 'react-activity';
+import { connect } from 'react-redux';
+import { fetchMenus } from '../../redux/actions/menusActions';
 
 class MenusContainer extends Component {
-  state = {
-    restaurant: {},
-    menus: {},
-    cart: [],
-    isLoading: true,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      cart: [],
+    };
+  }
 
   addMeal = meal => {
     let newCart = [...this.state.cart];
@@ -33,6 +34,15 @@ class MenusContainer extends Component {
     this.setState({ cart: newCart });
   };
 
+  // addMeal = meal => {
+  //   console.log(meal);
+  // };
+  // increment = id => {
+  //   console.log(id);
+  // };
+  // decrement = id => {
+  //   console.log(id);
+  // };
   increment = id => {
     let newCart = [...this.state.cart];
     for (let i = 0; i < newCart.length; i++) {
@@ -55,39 +65,30 @@ class MenusContainer extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get(
-        'https://s3-eu-west-1.amazonaws.com/lereacteurapp/react/deliveroo/deliveroo-cart.json',
-      )
-      .then(response =>
-        this.setState({
-          restaurant: response.data.restaurant,
-          menus: response.data.menu,
-          isLoading: false,
-        }),
-      );
+    this.props.fetchMenus();
   }
 
   render() {
-    if (!this.state.isLoading) {
-      return (
-        <Menus
-          cart={this.state.cart}
-          restaurant={this.state.restaurant}
-          menus={this.state.menus}
-          addMeal={this.addMeal}
-          increment={this.increment}
-          decrement={this.decrement}
-        />
-      );
-    } else {
-      return (
-        <div className="loadingIndicator">
-          <Spinner color={'blue'} />
-        </div>
-      );
-    }
+    return (
+      <Menus
+        cart={this.state.cart}
+        restaurant={this.props.restaurant}
+        menus={this.props.menus}
+        addMeal={this.addMeal}
+        increment={this.increment}
+        decrement={this.decrement}
+      />
+    );
   }
 }
 
-export default MenusContainer;
+const mapStateToProps = state => ({
+  menus: state.menus.menuItems,
+  restaurant: state.menus.restaurant,
+  cart: state.cart.cartItems,
+  cartItem: state.cart.cartItem,
+});
+export default connect(
+  mapStateToProps,
+  { fetchMenus },
+)(MenusContainer);

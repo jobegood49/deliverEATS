@@ -2,11 +2,23 @@
   display: flex;
   flex-wrap: wrap;
 }
-.container {
-  display: flex;
+.data-container {
   flex: 1;
   /* flex-direction: row; */
   /* flex-wrap: wrap; */
   align-items: center;
   justify-content: space-around;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cart {
+  margin-left: 20px;
+}
+
+.form {
+  margin-right: 20px;
 }
