@@ -9,14 +9,14 @@ export default class Checkout extends Component {
       <div>
         {typeof this.props.location.params !== 'undefined' ? (
           <div className="container">
-            <div className="cart">
+            <div>
               <Cart
                 cart={this.props.location.params.cart}
                 increment={this.props.location.params.increment}
                 decrement={this.props.location.params.decrement}
               />
             </div>
-            <div className="form">
+            <div>
               <Form
                 onSubmit={values => {
                   console.log(values);

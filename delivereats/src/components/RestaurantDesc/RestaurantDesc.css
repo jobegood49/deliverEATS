@@ -7,7 +7,6 @@
   flex: 1;
   padding-right: 30px;
 }
-
 .restaurantImage {
   width: 370px;
   height: 160px;
@@ -15,7 +14,6 @@
   object-position: center;
   border-radius: 3px;
 }
-
 .name {
   font-size: 28px;
   line-height: 28px;
@@ -23,7 +21,6 @@
   font-style: normal;
   color: #2e3333;
 }
-
 .desc {
   display: block;
   margin-block-start: 1em;
