@@ -10,21 +10,25 @@ import {
 import { connect } from 'react-redux';
 
 class MenusContainer extends Component {
+  doneLoading = false;
   componentDidMount() {
     this.props.fetchMenus();
+    this.doneLoading = true;
   }
 
   render() {
     return (
-      <Menus
-        cart={this.props.cart}
-        restaurant={this.props.restaurant}
-        menus={this.props.menus}
-        addMeal={this.props.addToCart}
-        increase={this.props.increaseQuantity}
-        decrease={this.props.reduceQuantity}
-        removeMeal={this.props.removeFromCart}
-      />
+      this.doneLoading && (
+        <Menus
+          cart={this.props.cart}
+          restaurant={this.props.restaurant}
+          menus={this.props.menus}
+          addMeal={this.props.addToCart}
+          increase={this.props.increaseQuantity}
+          decrease={this.props.reduceQuantity}
+          removeMeal={this.props.removeFromCart}
+        />
+      )
     );
   }
 }
