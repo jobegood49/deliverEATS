@@ -20,7 +20,7 @@ class Checkout extends Component {
                 }}
                 render={({ handleSubmit, pristine, invalid }) => (
                   <form onSubmit={handleSubmit}>
-                    <h2>Simple Default Input</h2>
+                    <h2>Checkout Form</h2>
                     <div>
                       <label>First Name</label>
                       <Field
@@ -29,20 +29,14 @@ class Checkout extends Component {
                         placeholder="First Name"
                       />
                     </div>
-                    <h2>Render Function</h2>
-                    <Field
-                      name="bio"
-                      render={({ input, meta }) => (
-                        <div>
-                          <label>Bio</label>
-                          <textarea {...input} />
-                          {meta.touched &&
-                            meta.error && <span>{meta.error}</span>}
-                        </div>
-                      )}
-                    />
-
-                    <h2>Render Function as Children</h2>
+                    <div>
+                      <label>Last Name</label>
+                      <Field
+                        name="lastName"
+                        component="input"
+                        placeholder="Last Name"
+                      />
+                    </div>
                     <Field name="phone">
                       {({ input, meta }) => (
                         <div>
