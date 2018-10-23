@@ -1,58 +1,15 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Menus from './Menus';
-import { Spinner } from 'react-activity';
 import { fetchMenus } from '../../redux/actions/menuActions';
+import {
+  increaseQuantity,
+  reduceQuantity,
+  addToCart,
+  removeFromCart,
+} from '../../redux/actions/cartActions';
 import { connect } from 'react-redux';
 
 class MenusContainer extends Component {
-  state = {
-    cart: [],
-  };
-
-  addMeal = meal => {
-    let newCart = [...this.state.cart];
-    let isInCart = false;
-    for (let i = 0; i < newCart.length; i++) {
-      if (newCart[i].id === meal.id) {
-        isInCart = true;
-        newCart[i].quantity++;
-        break;
-      }
-    }
-    if (!isInCart) {
-      meal = {
-        id: meal.id,
-        title: meal.title,
-        price: meal.price,
-        quantity: 1,
-      };
-      newCart.push(meal);
-    }
-    this.setState({ cart: newCart });
-  };
-
-  increment = id => {
-    let newCart = [...this.state.cart];
-    for (let i = 0; i < newCart.length; i++) {
-      if (newCart[i].id === id) {
-        newCart[i].quantity += 1;
-      }
-    }
-    this.setState({ cart: newCart });
-  };
-
-  decrement = id => {
-    let newCart = [...this.state.cart];
-    for (let i = 0; i < newCart.length; i++) {
-      if (newCart[i].id === id) {
-        newCart[i].quantity -= 1;
-        if (newCart[i].quantity === 0) newCart.splice(i, 1);
-      }
-    }
-    this.setState({ cart: newCart });
-  };
-
   componentDidMount() {
     this.props.fetchMenus();
   }
@@ -60,12 +17,13 @@ class MenusContainer extends Component {
   render() {
     return (
       <Menus
-        cart={this.state.cart}
+        cart={this.props.cart}
         restaurant={this.props.restaurant}
         menus={this.props.menus}
-        addMeal={this.addMeal}
-        increment={this.increment}
-        decrement={this.decrement}
+        addMeal={this.props.addToCart}
+        increase={this.props.increaseQuantity}
+        decrease={this.props.reduceQuantity}
+        removeMeal={this.props.removeFromCart}
       />
     );
   }
@@ -74,9 +32,10 @@ class MenusContainer extends Component {
 const mapStateToProps = state => ({
   menus: state.menus.menuItems,
   restaurant: state.menus.restaurant,
+  cart: state.cart.cartItems,
 });
 
 export default connect(
   mapStateToProps,
-  { fetchMenus },
+  { fetchMenus, reduceQuantity, increaseQuantity, addToCart, removeFromCart },
 )(MenusContainer);

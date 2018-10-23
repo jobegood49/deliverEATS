@@ -4,7 +4,7 @@ import CartMeal from '../CartMeal';
 import Total from '../Total';
 import { Link } from 'react-router-dom';
 
-export default class Cart extends Component {
+class Cart extends Component {
   render() {
     return (
       <div className="cartContainer">
@@ -12,11 +12,6 @@ export default class Cart extends Component {
           <Link
             to={{
               pathname: '/checkout',
-              params: {
-                cart: this.props.cart,
-                increment: this.props.increment,
-                decrement: this.props.decrement,
-              },
             }}
           >
             <div className="button">
@@ -29,8 +24,9 @@ export default class Cart extends Component {
                 <CartMeal
                   key={i}
                   cartMeal={cartMeal}
-                  increment={this.props.increment}
-                  decrement={this.props.decrement}
+                  increase={this.props.increase}
+                  decrease={this.props.decrease}
+                  removeMeal={this.props.removeMeal}
                 />
               ))}
               <Total cart={this.props.cart} />
@@ -45,3 +41,5 @@ export default class Cart extends Component {
     );
   }
 }
+
+export default Cart;

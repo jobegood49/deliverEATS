@@ -3,7 +3,16 @@ import './Menus.css';
 import MenuItems from '../MenuItems';
 import RestaurantDesc from './../RestaurantDesc/';
 import Cart from '../Cart';
-const Menus = ({ restaurant, menus, addMeal, decrement, increment, cart }) => {
+
+const Menus = ({
+  restaurant,
+  menus,
+  addMeal,
+  increase,
+  decrease,
+  cart,
+  removeMeal,
+}) => {
   const categories = Object.keys(menus);
   return (
     <div className="containerMain">
@@ -21,6 +30,7 @@ const Menus = ({ restaurant, menus, addMeal, decrement, increment, cart }) => {
                       key={i}
                       cart={cart}
                       addMeal={addMeal}
+                      increase={increase}
                       category={category}
                       items={menus[category]}
                     />
@@ -28,7 +38,12 @@ const Menus = ({ restaurant, menus, addMeal, decrement, increment, cart }) => {
                 }
               })}
             </div>
-            <Cart increment={increment} decrement={decrement} cart={cart} />
+            <Cart
+              increase={increase}
+              decrease={decrease}
+              cart={cart}
+              removeMeal={removeMeal}
+            />
           </div>
         </div>
       </div>
