@@ -4,15 +4,7 @@ import MenuItems from '../MenuItems';
 import RestaurantDesc from './../RestaurantDesc/';
 import Cart from '../Cart';
 
-const Menus = ({
-  restaurant,
-  menus,
-  addMeal,
-  increase,
-  decrease,
-  cart,
-  removeMeal,
-}) => {
+const Menus = ({ restaurant, menus, addMeal, increase, cart }) => {
   const categories = Object.keys(menus);
   return (
     <div className="containerMain">
@@ -38,12 +30,7 @@ const Menus = ({
                 }
               })}
             </div>
-            <Cart
-              increase={increase}
-              decrease={decrease}
-              cart={cart}
-              removeMeal={removeMeal}
-            />
+            <Cart />
           </div>
         </div>
       </div>

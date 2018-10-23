@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import Menus from './Menus';
 import { fetchMenus } from '../../redux/actions/menuActions';
-import {
-  increaseQuantity,
-  reduceQuantity,
-  addToCart,
-  removeFromCart,
-} from '../../redux/actions/cartActions';
+import { increaseQuantity, addToCart } from '../../redux/actions/cartActions';
 import { connect } from 'react-redux';
 
 class MenusContainer extends Component {
@@ -25,8 +20,6 @@ class MenusContainer extends Component {
           menus={this.props.menus}
           addMeal={this.props.addToCart}
           increase={this.props.increaseQuantity}
-          decrease={this.props.reduceQuantity}
-          removeMeal={this.props.removeFromCart}
         />
       )
     );
@@ -41,5 +34,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { fetchMenus, reduceQuantity, increaseQuantity, addToCart, removeFromCart },
+  { fetchMenus, increaseQuantity, addToCart },
 )(MenusContainer);

@@ -3,7 +3,12 @@ import './Cart.css';
 import CartMeal from '../CartMeal';
 import Total from '../Total';
 import { Link } from 'react-router-dom';
-
+import { connect } from 'react-redux';
+import {
+  removeFromCart,
+  increaseQuantity,
+  reduceQuantity,
+} from '../../redux/actions/cartActions';
 class Cart extends Component {
   render() {
     return (
@@ -24,9 +29,9 @@ class Cart extends Component {
                 <CartMeal
                   key={i}
                   cartMeal={cartMeal}
-                  increase={this.props.increase}
-                  decrease={this.props.decrease}
-                  removeMeal={this.props.removeMeal}
+                  increase={this.props.increaseQuantity}
+                  decrease={this.props.reduceQuantity}
+                  removeMeal={this.props.removeFromCart}
                 />
               ))}
               <Total cart={this.props.cart} />
@@ -41,5 +46,11 @@ class Cart extends Component {
     );
   }
 }
+const mapStateToProps = state => ({
+  cart: state.cart.cartItems,
+});
 
-export default Cart;
+export default connect(
+  mapStateToProps,
+  { removeFromCart, reduceQuantity, increaseQuantity },
+)(Cart);

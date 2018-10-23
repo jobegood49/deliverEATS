@@ -2,26 +2,22 @@ import React, { Component } from 'react';
 import { Form, Field } from 'react-final-form';
 import Cart from '../Cart';
 import './Checkout.css';
+import { connect } from 'react-redux';
 
-export default class Checkout extends Component {
+class Checkout extends Component {
   render() {
     return (
       <div>
-        {typeof this.props.location.params !== 'undefined' ? (
+        {this.props.cart.length > 0 ? (
           <div className="container">
             <div>
-              <Cart
-                cart={this.props.location.params.cart}
-                increment={this.props.location.params.increment}
-                decrement={this.props.location.params.decrement}
-              />
+              <Cart />
             </div>
             <div>
               <Form
                 onSubmit={values => {
                   console.log(values);
                 }}
-                // validate={}
                 render={({ handleSubmit, pristine, invalid }) => (
                   <form onSubmit={handleSubmit}>
                     <h2>Simple Default Input</h2>
@@ -67,16 +63,17 @@ export default class Checkout extends Component {
             </div>
           </div>
         ) : (
-          // this.props.location.params.cart.map(cartItem => (
-          //   <div className="item">
-          //     <p>{cartItem.title}</p>
-          //     <p>{cartItem.price}</p>
-          //     <p>{cartItem.quantity}</p>
-          //   </div>
-          // ))
           <p>PLEASE SELECT ITEMS BEFORE CHECKOUT</p>
         )}
       </div>
     );
   }
 }
+const mapStateToProps = state => ({
+  cart: state.cart.cartItems,
+});
+
+export default connect(
+  mapStateToProps,
+  null,
+)(Checkout);
