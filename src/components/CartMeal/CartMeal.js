@@ -1,6 +1,6 @@
-import React from 'react';
-import './CartMeal.css';
-import Price from 'format-price';
+import React from 'react'
+import './CartMeal.css'
+import Price from 'format-price'
 
 const CartMeal = ({ cartMeal, increase, decrease, removeMeal }) => {
   return (
@@ -9,10 +9,10 @@ const CartMeal = ({ cartMeal, increase, decrease, removeMeal }) => {
         <button
           className="cart-button"
           onClick={() => {
-            if (cartMeal.quantity == 1) {
-              removeMeal(cartMeal);
+            if (cartMeal.quantity === 1) {
+              removeMeal(cartMeal)
             } else {
-              decrease(cartMeal.id);
+              decrease(cartMeal.id)
             }
           }}
         >
@@ -22,7 +22,7 @@ const CartMeal = ({ cartMeal, increase, decrease, removeMeal }) => {
         <button
           className="cart-button"
           onClick={() => {
-            increase(cartMeal.id);
+            increase(cartMeal.id)
           }}
         >
           <i className="fas fa-plus-circle" />
@@ -31,7 +31,7 @@ const CartMeal = ({ cartMeal, increase, decrease, removeMeal }) => {
       </div>
       <p>{Price.format('fr-FR', 'EUR', cartMeal.price * cartMeal.quantity)}</p>
     </div>
-  );
-};
+  )
+}
 
-export default CartMeal;
+export default CartMeal

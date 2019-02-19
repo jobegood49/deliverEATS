@@ -1,11 +1,11 @@
-import React from 'react';
-import './Menus.css';
-import MenuItems from '../MenuItems';
-import RestaurantDesc from './../RestaurantDesc/';
-import Cart from '../Cart';
+import React from 'react'
+import './Menus.css'
+import MenuItems from '../MenuItems'
+import RestaurantDesc from './../RestaurantDesc/'
+import Cart from '../Cart'
 
 const Menus = ({ restaurant, menus, addMeal, increase, cart }) => {
-  const categories = Object.keys(menus);
+  const categories = Object.keys(menus)
   return (
     <div className="containerMain">
       <div className="restaurantComponentContainer">
@@ -26,7 +26,9 @@ const Menus = ({ restaurant, menus, addMeal, increase, cart }) => {
                       category={category}
                       items={menus[category]}
                     />
-                  );
+                  )
+                } else {
+                  return <span />
                 }
               })}
             </div>
@@ -35,7 +37,7 @@ const Menus = ({ restaurant, menus, addMeal, increase, cart }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Menus;
+export default Menus

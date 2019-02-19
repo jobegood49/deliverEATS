@@ -1,29 +1,29 @@
-import React from 'react';
-import './Meal.css';
-import LinesEllipsis from 'react-lines-ellipsis';
+import React from 'react'
+import './Meal.css'
+import LinesEllipsis from 'react-lines-ellipsis'
 
 const Meal = ({ item, addMeal, cart, increase }) => {
-  let active = 'notActive';
+  let active = 'notActive'
   for (let i = 0; i < cart.length; i++) {
-    if (cart[i].id === item.id) active = 'active';
+    if (cart[i].id === item.id) active = 'active'
   }
   return (
     <div
       className={`cardContainer ${active}`}
       onClick={() => {
-        if (cart.length == 0) {
-          addMeal(item);
+        if (cart.length === 0) {
+          addMeal(item)
         } else {
-          let isInCart = false;
+          let isInCart = false
           for (let i = 0; i < cart.length; i++) {
             if (cart[i].id === item.id) {
-              isInCart = true;
+              isInCart = true
             }
           }
           if (isInCart) {
-            increase(item.id);
+            increase(item.id)
           } else {
-            addMeal(item);
+            addMeal(item)
           }
         }
       }}
@@ -52,7 +52,7 @@ const Meal = ({ item, addMeal, cart, increase }) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Meal;
+export default Meal
